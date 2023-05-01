@@ -3,119 +3,111 @@
 
 <head>
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="<https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css>">
 
-	<!-- Google Font -->
+<!-- Google Font -->
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="<https://fonts.googleapis.com>">
+<link rel="preconnect" href="<https://fonts.gstatic.com>" crossorigin>
+<link href="<https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap>" rel="stylesheet">
 
-	<!-------->
+<!-------->
 
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
-		}
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
 
+	.navMenu {
+		font-family: 'Advent Pro', sans-serif;
+		padding: 8px;
+		text-align: center;
+		margin: 7px auto;
+		width: fit-content;
+	}
 
-		.navMenu {
-			font-family: 'Advent Pro', sans-serif;
-			padding: 8px;
-			text-align: center;
-			margin: 7px auto;
-			width: fit-content;
-		}
+	.navMenu a {
+		color: #272727;
+		text-decoration: none;
+		text-transform: uppercase;
+		display: inline-block;
+		padding: 6px;
+	}
 
-		.navMenu a {
-			color: #272727;
-			text-decoration: none;
-			text-transform: uppercase;
-			display: inline-block;
-			padding: 6px;
-		}
+	.background {
+		background-color: #ece5f0;
+	}
 
-		.background {
-			background-color: #ece5f0;
-		}
+	.border {
+		border: 1px solid #cccccc;
 
-		.border {
-			border: 1px solid #cccccc;
+	}
 
-		}
+	.navMenu a:hover {
 
-		.navMenu a:hover {
+		color: #d09c0b;
+	}
+</style>
 
-			color: #d09c0b;
-		}
-	</style>
 </head>
 
 <body>
 
-	<nav class="navMenu  border">
-		<a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Home</a>
-		<a id="inbox" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-inbox"></i> Inbox</a>
-		<a id="week" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-calendar-week"></i> Planner</a>
-		<a id="projects" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-briefcase"></i> Projects</a>
-		<a id="tasks" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> Tasks</a>
-		<a id="business" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-money-bill-wave"></i> Business</a>
-		<a id="knowledge" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-lightbulb"></i> Knowledge</a>
-		<a id="topics" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-layer-group"></i> Topics</a>
-		<a id="notes" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> Notes</a>
-		<a id="media" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-bookmark"></i> Media</a>
-		<a id="resourses" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-wrench"></i> Resourses</a>
-		<a id="lifewiki" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-heart"></i> Lifewiki</a>
+<nav class="navMenu  border">
+	<a id="홈" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> 홈</a>
+	<a id="오늘의작업" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list"></i> 오늘의작업</a>
+	<a id="글감" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-feather"></i> 글감</a>
+	<a id="구글블로그" onclick="navigate(this.id)" href="#"> <i class="fa-brands fa-google"></i> 구글블로그</a>
+	<a id="네이버블로그" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-n"></i> 네이버블로그</a>
+	<a id="숏폼" onclick="navigate(this.id)" href="#"> <i class="fa-brands fa-tiktok"></i> 숏폼</a>
+	<a id="인스타" onclick="navigate(this.id)" href="#"> <i class="fa-brands fa-instagram"></i> 인스타</a>
+	<a id="유튜브" onclick="navigate(this.id)" href="#"> <i class="fa-brands fa-youtube"></i> 유튜브</a>
+	<a id="AI" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-brain"></i> AI</a>
+	<a id="만다라트" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-bookmark"></i> 만다라트</a>
+	<a id="빠른메모" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-note-sticky"></i> 빠른메모</a>
+	<a id="애드센스" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-rectangle-ad"></i> 애드센스</a>
 
+</nav>
 
+<script>
 
-	</nav>
+	let direction = "horizontal";
+	if (direction === "vertical") {
+		document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
+	}
 
+	function navigate(id) {
 
-	<script>
-
-		let direction = "horizontal";
-		if (direction === "vertical") {
-			document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
-		}
-
-
-		function navigate(id) {
-
-			if (id == 'home')
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "inbox")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "week")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "month")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "projects")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "business")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "tasks")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "knowledge")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "topics")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "notes")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "media")
-				window.open("https://example.com", '_blank').focus();
-			else if (id == "resourses")
-				window.open("https://example.com3", '_blank').focus();
-			else if (id == "lifewiki")
-				window.open("https://example.com", '_blank').focus();
-
-		}
-	</script>
-
+		if (id == '홈')
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "오늘의작업")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "글감")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "구글블로그")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "네이버블로그")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "숏폼")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "인스타")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "유튜브")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "AI")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "만다라트")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "빠른메모")
+			window.open("<https://example.com>", '_blank').focus();
+		else if (id == "애드센스")
+			window.open("<https://example.com3>", '_blank').focus();
+	}
+</script>
 
 </body>
 
